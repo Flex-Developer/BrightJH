@@ -6,6 +6,10 @@ $(function(){
 	let homeH = home.innerHeight();
 	let scrollPos = $(window).scrollTop();
 
+	let nav=$("#nav");
+	let navToggle=$("#navToggle");
+	
+
 	checkScroll(scrollPos,homeH);
 
 	$(window).on("scroll load resize", function(){
@@ -33,6 +37,8 @@ $(function(){
 
 		// console.log(elementOffset);
 
+		nav.removeClass("show");
+
 		$("html, body").animate({
 			scrollTop:elementOffset
 		}, 700);
@@ -40,14 +46,15 @@ $(function(){
 
 
 	/*Nav Toggle*/
-	let nav=$("#nav");
-	let navToggle=$("#navToggle");
-
 	navToggle.on("click",function(event){
 		event.preventDefault();
 
 		nav.toggleClass("show");
 
-	})
+	});
+
+
+
+
 
 });
